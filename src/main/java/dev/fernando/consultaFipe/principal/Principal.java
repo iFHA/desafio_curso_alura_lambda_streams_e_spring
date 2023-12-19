@@ -4,6 +4,7 @@ import dev.fernando.consultaFipe.converters.AnoConverter;
 import dev.fernando.consultaFipe.converters.MarcaConverter;
 import dev.fernando.consultaFipe.enums.TipoVeiculoEnum;
 import dev.fernando.consultaFipe.models.Ano;
+import dev.fernando.consultaFipe.models.Fipe;
 import dev.fernando.consultaFipe.models.Marca;
 import dev.fernando.consultaFipe.models.Modelo;
 import dev.fernando.consultaFipe.services.AnoService;
@@ -95,6 +96,7 @@ public class Principal {
                     Ano ano = this.anoConverter.fromDTO(dto);
                     return this.fipeService.consultarFipe(tipoVeiculo, codigoMarca, codigoModelo, ano.getCodigo());
                 })
+                .sorted(Comparator.comparing(Fipe::ano).reversed())
                 .forEach(System.out::println);
     }
 }
