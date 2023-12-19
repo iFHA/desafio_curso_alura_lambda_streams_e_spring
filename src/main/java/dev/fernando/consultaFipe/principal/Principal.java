@@ -4,7 +4,6 @@ import dev.fernando.consultaFipe.converters.AnoConverter;
 import dev.fernando.consultaFipe.converters.MarcaConverter;
 import dev.fernando.consultaFipe.enums.TipoVeiculoEnum;
 import dev.fernando.consultaFipe.models.Ano;
-import dev.fernando.consultaFipe.models.Fipe;
 import dev.fernando.consultaFipe.models.Marca;
 import dev.fernando.consultaFipe.models.Modelo;
 import dev.fernando.consultaFipe.services.AnoService;
