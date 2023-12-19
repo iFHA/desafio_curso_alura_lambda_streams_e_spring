@@ -1,5 +1,6 @@
 package dev.fernando.consultaFipe;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.fernando.consultaFipe.principal.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,4 +22,5 @@ public class ConsultaFipeApplication {
 			this.principal.exibeMenu();
 		};
 	}
+
 }

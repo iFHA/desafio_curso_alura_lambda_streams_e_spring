@@ -16,14 +16,13 @@ import java.nio.charset.StandardCharsets;
 public class ConsultaApi {
     private final HttpClient client = HttpClient.newHttpClient();
     private final String BASE_URL = "https://parallelum.com.br/fipe/api/v1";
-    private final ObjectMapper mapper = new ObjectMapper();
 
-    public <T> T consultar(String url, TypeReference<T> classe) {
+    public String consultar(String url) {
         url = this.BASE_URL + url; //URLEncoder.encode(url, StandardCharsets.UTF_8);
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
         try {
             HttpResponse<String> response = this.client.send(request, HttpResponse.BodyHandlers.ofString());
-            return this.mapper.readValue(response.body(), classe);
+            return response.body();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
